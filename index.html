@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header-app">
+            <form>
+                <input type="text" name="name_user" id="nameUser" placeholder="Digite seu nome de usuário do Github" required autocomplete="off">
+                <input type="text" name="task" id="taskInput" placeholder="Adicione uma nova tarefa" required autocomplete="off">
+                <button id="add-task">ADD NEW TASK</button>
+            </form>
+            <div class="dropzone trash"><p>X</p></div>
+        </header>
+        <main>
+            <div id="progress" class="progress dropzone">
+                <div class="task" draggable="true">
+                </div>
+                <div class="task" draggable="true"></div>
+            </div>
+            <div id="review" class="review dropzone">
+                <div class="task" draggable="true"></div>
+                <div class="task" draggable="true"></div>
+                <div class="task" draggable="true"></div>
+            </div>
+            <div id="complete" class="complete dropzone">
+                <div class="task" draggable="true"></div>
+                <div class="task" draggable="true"></div>
+                <div class="task" draggable="true"></div>
+            </div>
+        </main>
+        <script src="js/script.js"></script>
+    </div>
+</body>
+</html>
