@@ -50,13 +50,21 @@ dropzone.forEach(droptarget => {
 });
 
 
-
 function addNewTask(){
     let createNewTask = document.createElement('div');
     createNewTask.setAttribute('class', 'task');
     createNewTask.setAttribute('draggable', 'true');
 
     let nameUser = document.querySelector('input[id=nameUser]').value;
+    let taskinput = document.querySelector('input[id=taskInput]').value;
+
+    let txtTask = '';
+    txtTask = taskinput;
+    let pTask = document.createElement('p');
+
+    pTask.innerHTML = txtTask;
+
+    createNewTask.appendChild(pTask);
 
     let ajax = new XMLHttpRequest();
     ajax.open('GET', `https://api.github.com/users/${nameUser}`);
@@ -85,8 +93,8 @@ function addNewTask(){
                 }
             }
         }
-
-        let savingText = document.createTextNode(pUser);
+        console.log(pUser);
+        let savingText = document.innerHTML = pUser;
 
         paragraf1.appendChild(savingText);
         createNewTask.appendChild(paragraf1);
